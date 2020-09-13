@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8091
 
 spring:
   cloud:
@@ -7,7 +7,7 @@ spring:
       server:
         git:
           uri: https://github.com/pjuanluis/curso-microservicios.git
-          searchPath: config-data
+          searchPaths: config-data
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
 

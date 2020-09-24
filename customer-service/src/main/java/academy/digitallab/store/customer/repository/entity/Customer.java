@@ -15,30 +15,25 @@ import java.io.Serializable;
 @Table(name="tbl_customers")
 public class Customer implements Serializable {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 7303138455978442904L;
-
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty(message = "El número de documento no puede ser vacío")
-    @Size( min = 8 , max = 8, message = "El tamaño del número de documento debe ser 8")
+    @NotEmpty(message = "El nÃºmero de documento no puede ser vacÃ­o")
+    @Size( min = 8 , max = 8, message = "El tamaÃ±o del nÃºmero de documento es 8")
     @Column(name = "number_id" , unique = true ,length = 8, nullable = false)
     private String numberID;
 
-    @NotEmpty(message = "El nombre no puede ser vacío")
+    @NotEmpty(message = "El nombre no puede ser vacÃ­o")
     @Column(name="first_name", nullable=false)
     private String firstName;
 
-    @NotEmpty(message = "El apellido no puede ser vacío")
+    @NotEmpty(message = "El apellido no puede ser vacÃ­o")
     @Column(name="last_name", nullable=false)
     private String lastName;
 
-    @NotEmpty(message = "El correo no puede estar vacío")
-    @Email(message = "No es un dirección de correo bien formada")
+    @NotEmpty(message = "el correo no puede estar vacÃ­o")
+    @Email(message = "no es un direcciÃ³n de correo bien formada")
     @Column(unique=true, nullable=false)
     private String email;
 
@@ -46,7 +41,7 @@ public class Customer implements Serializable {
     private String photoUrl;
 
 
-    @NotNull(message = "La región no puede ser vacia")
+    @NotNull(message = "la regiÃ³n no puede ser vacia")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id")
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })

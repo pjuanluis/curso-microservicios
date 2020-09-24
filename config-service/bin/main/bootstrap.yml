@@ -1,17 +1,16 @@
 server:
-  port: 8091
+  port: 8081
 
 spring:
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/pjuanluis/curso-microservicios.git
+          uri: https://github.com/digitallab-academy/ms-course-youtube.git
           searchPaths: config-data
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
-
   security:
     user:
       name: root
-      password: s3cr3t3
+      password: s3cr3t

@@ -1,6 +1,6 @@
 package academy.digitallab.store.customer.controller;
 
-import academy.digitallab.store.customer.service.ICustomerService;
+import academy.digitallab.store.customer.service.CustomerService;
 import academy.digitallab.store.customer.repository.entity.Customer;
 import academy.digitallab.store.customer.repository.entity.Region;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 public class CustomerRest {
 
     @Autowired
-    ICustomerService customerService;
+    CustomerService customerService;
 
     // -------------------Retrieve All Customers--------------------------------------------
 

@@ -1,45 +1,34 @@
 package academy.digitallab.store.shopping.entity;
 
 
+import academy.digitallab.store.shopping.model.Product;
 import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.Positive;
-
-
-import academy.digitallab.store.shopping.model.Product;
-
 import java.io.Serializable;
 
 @Entity
 @Data
 @Table(name = "tbl_invoce_items")
-public class InvoiceItem implements Serializable {
+public class InvoiceItem  {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 3408340998736512324L;
-	
-	
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-	
     @Positive(message = "El stock debe ser mayor que cero")
     private Double quantity;
-    
     private Double  price;
 
     @Column(name = "product_id")
     private Long productId;
 
+
     @Transient
     private Double subTotal;
-    
+
     @Transient
     private Product product;
-
 
     public Double getSubTotal(){
         if (this.price >0  && this.quantity >0 ){

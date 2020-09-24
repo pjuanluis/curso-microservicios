@@ -1,13 +1,14 @@
 package academy.digitallab.store.shopping.service;
 
+import academy.digitallab.store.shopping.client.CustomerClient;
+import academy.digitallab.store.shopping.client.ProductClient;
 import academy.digitallab.store.shopping.entity.InvoiceItem;
 import academy.digitallab.store.shopping.model.Customer;
 import academy.digitallab.store.shopping.model.Product;
 import academy.digitallab.store.shopping.repository.InvoiceItemsRepository;
 import academy.digitallab.store.shopping.repository.InvoiceRepository;
-import academy.digitallab.store.shopping.client.ICustomerClient;
-import academy.digitallab.store.shopping.client.IProductClient;
 import academy.digitallab.store.shopping.entity.Invoice;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class InvoiceServiceImpl implements InvoiceService {
 
@@ -23,12 +25,11 @@ public class InvoiceServiceImpl implements InvoiceService {
 
     @Autowired
     InvoiceItemsRepository invoiceItemsRepository;
-    
     @Autowired
-    ICustomerClient customerClient;
+    CustomerClient customerClient;
 
     @Autowired
-    IProductClient productClient;
+    ProductClient productClient;
 
     @Override
     public List<Invoice> findInvoiceAll() {
@@ -94,4 +95,3 @@ public class InvoiceServiceImpl implements InvoiceService {
         return invoice ;
     }
 }
-

@@ -1,13 +1,11 @@
 package academy.digitallab.store.shopping.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import academy.digitallab.store.shopping.model.Customer;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.Valid;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,15 +14,10 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "tlb_invoices")
-public class Invoice implements Serializable {
+public class Invoice {
 
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 6950392727946552292L;
-
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -49,7 +42,7 @@ public class Invoice implements Serializable {
     private List<InvoiceItem> items;
 
     private String state;
-    
+
     @Transient
     private Customer customer;
 

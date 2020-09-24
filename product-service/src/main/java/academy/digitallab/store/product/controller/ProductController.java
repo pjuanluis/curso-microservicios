@@ -3,7 +3,6 @@ package academy.digitallab.store.product.controller;
 import academy.digitallab.store.product.entity.Category;
 import academy.digitallab.store.product.entity.Product;
 import academy.digitallab.store.product.service.ProductService;
-import ch.qos.logback.core.pattern.util.RegularEscapeUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,7 +83,7 @@ public class ProductController {
         return ResponseEntity.ok(productDelete);
     }
     @GetMapping(value = "/{id}/stock")
-    public ResponseEntity<Product> updateStockProduct(@PathVariable  Long id ,@RequestParam(name = "quantity", required = true) Double quantity){
+    public ResponseEntity<Product> updateStockProduct(@PathVariable("id") Long id ,@RequestParam(name = "quantity", required = true) Double quantity){
         Product product = productService.updateStock(id, quantity);
         if (product == null){
             return ResponseEntity.notFound().build();

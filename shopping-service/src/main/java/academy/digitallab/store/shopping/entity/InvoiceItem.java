@@ -5,6 +5,10 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.Positive;
+
+
+import academy.digitallab.store.shopping.model.Product;
+
 import java.io.Serializable;
 
 @Entity
@@ -32,6 +36,9 @@ public class InvoiceItem implements Serializable {
 
     @Transient
     private Double subTotal;
+    
+    @Transient
+    private Product product;
 
 
     public Double getSubTotal(){

@@ -13,7 +13,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "tlb_invoices")
+@Table(name = "tbl_invoices")
 public class Invoice {
 
 

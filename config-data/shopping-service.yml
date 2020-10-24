@@ -9,7 +9,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/invoice
     driverClassName: org.postgresql.Driver
     username: postgres
-    password: Mexico2020
+    password: Jlpr0893
 
   # ===============================
   # JPA / HIBERNATE

@@ -9,10 +9,11 @@ spring:
   # DB
   # ===============================
   datasource:
-    url: jdbc:postgresql://localhost:5432/product
-    driverClassName: org.postgresql.Driver
-    username: postgres
-    password: Jlpr0893
+    url: jdbc:h2:mem:productDB;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    platform: h2
+    username: sa
+    password:
 
   # ===============================
   # JPA / HIBERNATE
@@ -21,7 +22,7 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.H2Dialect
     properties:
       hibernate:
         show_sql: true
